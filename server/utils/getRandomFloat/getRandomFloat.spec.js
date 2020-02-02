@@ -18,7 +18,7 @@ describe('utils: getRandomFloat', () => {
     expect(getFractionalPart(num)).toBe(2);
   });
 
-  it('should handle different exp', () => {
+  it('should handle different fractional part', () => {
     const fp = 6;
     const num = getRandomFloat(min, max, fp);
 
