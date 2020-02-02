@@ -5,7 +5,7 @@ import {
 } from './salesActions';
 
 export const initialState = {
-  data: undefined,
+  data: [],
   loading: false,
   error: false,
 };
@@ -16,19 +16,22 @@ export default (state = initialState, action = {}) => {
   switch (type) {
     case SALES_REQUEST_PENDING:
       return {
+        ...state,
         loading: true,
         error: false,
       };
 
     case SALES_REQUEST_SUCCESS:
       return {
-        data: payload.data,
+        ...state,
+        data: [...state.data, ...payload.data],
         loading: false,
         error: false,
       };
 
     case SALES_REQUEST_FAILED:
       return {
+        ...state,
         data: payload.error,
         loading: false,
         error: true,

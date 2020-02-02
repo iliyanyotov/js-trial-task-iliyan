@@ -13,3 +13,8 @@ export const Wrapper = styled.div`
 export const ErrorMessage = styled.h5`
   color: red;
 `;
+
+export const ButtonWrapper = styled.div`
+  text-align: center;
+  margin-top: 16px;
+`;

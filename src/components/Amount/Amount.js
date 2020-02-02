@@ -10,7 +10,7 @@ class Amount extends PureComponent {
     const isRefund = state === SALE_STATE.REFUNDED;
 
     return (
-      <Styles.Wrapper type={state}>
+      <Styles.Wrapper state={state}>
         <span data-testid="amount-value">{isRefund ? `-${value}` : value}</span>
         <span data-testid="amount-currency">{currency}</span>
       </Styles.Wrapper>

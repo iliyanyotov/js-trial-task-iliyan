@@ -14,18 +14,18 @@ describe('reducers: sales', () => {
     const action = salesRequestPending();
 
     expect(salesReducer(undefined, action)).toEqual({
-      data: undefined,
+      data: [],
       loading: true,
       error: false,
     });
   });
 
   it('should handle SALES_REQUEST_SUCCESS action', () => {
-    const data = { foo: 'bar' };
+    const data = { data: [1, 2, 3] };
     const action = salesRequestSuccess(data);
 
     expect(salesReducer(undefined, action)).toEqual({
-      data: data,
+      data: data.data,
       loading: false,
       error: false,
     });
@@ -38,7 +38,7 @@ describe('reducers: sales', () => {
     let state = salesReducer(undefined, firstAction);
 
     expect(state).toEqual({
-      data: undefined,
+      data: [],
       loading: true,
       error: false,
     });

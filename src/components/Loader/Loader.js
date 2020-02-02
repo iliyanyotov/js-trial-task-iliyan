@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+
 import * as Styles from './Loader.styled';
 
 // https://tobiasahlin.com/spinkit/

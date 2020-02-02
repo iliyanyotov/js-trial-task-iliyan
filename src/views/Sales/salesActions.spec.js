@@ -18,7 +18,7 @@ describe('actions: sales', () => {
     expect(salesRequestSuccess(data)).toEqual({
       type: SALES_REQUEST_SUCCESS,
       payload: {
-        data,
+        ...data,
       },
     });
   });

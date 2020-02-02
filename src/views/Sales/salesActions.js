@@ -3,8 +3,11 @@ export const SALES_REQUEST_PENDING = 'sales/REQUEST_PENDING';
 export const SALES_REQUEST_SUCCESS = 'sales/REQUEST_SUCCESS';
 export const SALES_REQUEST_FAILED = 'sales/REQUEST_FAILED';
 
-export const salesRequest = () => ({
+export const salesRequest = (params) => ({
   type: SALES_REQUEST,
+  payload: {
+    params,
+  },
 });
 
 export const salesRequestPending = () => ({
@@ -13,9 +16,7 @@ export const salesRequestPending = () => ({
 
 export const salesRequestSuccess = (data) => ({
   type: SALES_REQUEST_SUCCESS,
-  payload: {
-    data,
-  },
+  payload: data,
 });
 
 export const salesRequestFailed = (error) => ({

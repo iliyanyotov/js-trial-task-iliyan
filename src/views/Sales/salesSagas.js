@@ -8,10 +8,10 @@ import {
   salesRequestFailed,
 } from './salesActions';
 
-function* fetchSales() {
+function* fetchSales(params) {
   try {
     yield put(salesRequestPending());
-    const data = yield call(getSales);
+    const data = yield call(getSales, params);
     yield put(salesRequestSuccess(data));
   } catch (error) {
     yield put(salesRequestFailed(error));
