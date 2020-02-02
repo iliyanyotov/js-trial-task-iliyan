@@ -1,17 +1,20 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { render } from 'react-testing-library';
+import { Normalize } from 'styled-normalize';
+
 import App from './App';
+import BaseStyles from './styles/base';
+import Sales from './views/Sales/Sales';
 
-describe('Enzyme testing', () => {
-  it('renders without crashing', () => {
-    shallow(<App />);
+describe('App', () => {
+  let wrapper = shallow(<App />);
+
+  it('should render the normalize and base styles', () => {
+    expect(wrapper.find(Normalize)).toHaveLength(1);
+    expect(wrapper.find(BaseStyles)).toHaveLength(1);
   });
-});
 
-describe('react-testing-library', () => {
-  it('renders welcome message', () => {
-    const { getByText } = render(<App />);
-    expect(getByText('Welcome to the SumUp task!')).toBeInTheDocument();
+  it('should render the sales view', () => {
+    expect(wrapper.find(Sales)).toHaveLength(1);
   });
 });
