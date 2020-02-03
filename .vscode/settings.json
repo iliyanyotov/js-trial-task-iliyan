@@ -4,6 +4,7 @@
         "deps",
         "install",
         "parens",
-        "postmerge"
+        "postmerge",
+        "testid"
     ]
 }

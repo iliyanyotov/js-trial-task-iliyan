@@ -1,7 +1,7 @@
 const addMonths = (date, months) => {
-  date.setMonth(date.getMonth() + (months - 1));
-
-  return date;
+  const newDate = new Date(date);
+  newDate.setMonth(date.getMonth() + (months - 1));
+  return newDate;
 };
 
 export default addMonths;

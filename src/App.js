@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Normalize } from 'styled-normalize';
+
+import BaseStyles from './styles/base';
+import Sales from './views/Sales/Sales';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>Welcome to the SumUp task!</p>
-        </header>
-      </div>
+      <React.Fragment>
+        <Normalize />
+        <BaseStyles />
+        <Sales />
+      </React.Fragment>
     );
   }
 }

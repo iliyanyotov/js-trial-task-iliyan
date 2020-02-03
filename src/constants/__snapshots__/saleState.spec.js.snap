@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`constants: SALE_STATE should match the snapshot 1`] = `
+Object {
+  "FAILED": "failed",
+  "REFUNDED": "refunded",
+  "SUCCESSFUL": "successful",
+}
+`;
