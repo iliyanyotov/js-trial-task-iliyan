@@ -23,16 +23,14 @@ class Sales extends PureComponent {
     const { id, date: timestamp, state, type, amount } = item;
     const date = new Date(timestamp);
 
-    return (
-      <>
-        <span key={`date-${id}`}>{date.toLocaleDateString()}</span>
-        <Pill key={`state-${id}`} state={state}>
-          {state}
-        </Pill>
-        <Amount key={`amount-${id}`} value={amount} state={state} />
-        <Method key={`method-${id}`} type={type} />
-      </>
-    );
+    return [
+      <span key={`date-${id}`}>{date.toLocaleDateString()}</span>,
+      <Pill key={`state-${id}`} state={state}>
+        {state}
+      </Pill>,
+      <Amount key={`amount-${id}`} value={amount} state={state} />,
+      <Method key={`method-${id}`} type={type} />,
+    ];
   }
 
   renderError() {
